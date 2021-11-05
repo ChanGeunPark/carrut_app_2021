@@ -1,40 +1,20 @@
 import React from 'react';
+import axios from 'axios';
 
-function Food({name,picture}){
-  return <div>
-    <h1>I like {name}</h1>
-    <p>{picture}</p>
-  </div>
-}
-const foodIlike = [
-  {
-    name: 'kimchi',
-    img: "img1"
-  },
-  {
-    name: 'Samgyeopsal',
-    img: "img2"
-  },
-  {
-    name: 'Bibimbap',
-    img: "img3"
-  },
-  {
-    name: 'Doncasu',
-    img: "img4"
+class App extends React.Component{
+  state = {
+    isLoading: true,
+    movies:[]
+  };
+  componentDidMount(){// 랜더린될때 맨먼저 랜더링 됨.
+    axios.get("https://yts-proxy.now.sh/list_movies.json");
   }
-
-];
-
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello!!</h1>
-      {foodIlike.map(dish=>(
-        <Food name={dish.name} picture={dish.img}/>
-      ))}
+  render(){
+    const {isLoading} = this.state;
+    return <div>
+      {isLoading ? "Loading": "We are ready"}
     </div>
-  );
+  }
 }
-
 export default App;
+
