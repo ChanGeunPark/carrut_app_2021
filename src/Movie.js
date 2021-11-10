@@ -9,11 +9,10 @@ function Movie({year, title, summary, poster, genres}){
         <div className="movie__data">
             <h3 className="movie__title">{title}</h3>
             <h4 className="movie__year">{year}</h4>
-            <ul className="genres">
+            <ul className="movie__genres">
                 {genres.map((genres, index) => <li key={index} className="genres__genre">{genres}</li>)}
             </ul>
-            <p className="movie_summary">{summary}</p>
-            
+            <p className="movie_summary">{summary.slice(0,140)}...</p>
         </div>
     </div>
     );
