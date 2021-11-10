@@ -9,7 +9,7 @@ class App extends React.Component{
     isLoading: true,
     movies:[]
   };
-
+ 
   getMovies = async() => {
     const {data: {data: {movies}}} = await axios.get("https://yts-proxy.nomadcoders1.now.sh/list_movies.json?sort_by-rating");
     this.setState({ movies, isLoading: false });

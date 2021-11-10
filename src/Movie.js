@@ -16,7 +16,7 @@ function Movie({year, title, summary, poster, genres}){
         </div>
     </div>
     );
-}
+} 
 
 Movie.prototype = {
     id: PropTypes.number.isRequired,
