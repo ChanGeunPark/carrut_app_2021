@@ -23,7 +23,7 @@ componentDidMount(){// 랜더린될때 맨먼저 랜더링 됨.
 render(){
 
     const {isLoading, movies} = this.state;
-    console.log(this.state.movies);
+    
     return (<section className="container">
     {isLoading ? (
         <div className="loader">
