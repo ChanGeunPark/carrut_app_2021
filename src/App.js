@@ -1,18 +1,22 @@
 import React from 'react';
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { 
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 import Home from "./routes/Home";
 import About from "./routes/About";
 import Navigation from "./components/Navigation";
 
 function App() {
   return ( 
-    <HashRouter>
+    <Router>
       <Navigation />
       <Routes>
-        <Route path="/" component={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about/:id" element={<About />} />
       </Routes>
-    </HashRouter>
+    </Router>
   );
 }
 
