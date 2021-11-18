@@ -34,7 +34,8 @@ render(){
             {movies.map(movie => (
             <Movie 
                 key={movie.id} 
-                id={movie.id} 
+                id={movie.id}
+                slug={movie.slug} 
                 year={movie.year} 
                 title={movie.title} 
                 summary={movie.summary} 

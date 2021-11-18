@@ -5,10 +5,16 @@ import "./About.css";
 import { useParams } from "react-router-dom";
 
 function About(props){
-    const {id} = useParams();
-    console.log(id);
+    const {slug} = useParams();
+    const getMovie = async () => {
+        const json = await(
+            await fetch(`https://yts.mx/api/v2/list_movies.json?${slug}`)
+            ).json();
+        console.log(json);
+    };
+    console.log(slug);
     useEffect(()=>{
-
+        getMovie();
     },[]);
 
 

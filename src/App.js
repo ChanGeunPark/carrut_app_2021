@@ -14,7 +14,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about/:id" element={<About />} />
+        <Route path="/about/:slug" element={<About />} />
       </Routes>
     </Router>
   );
